@@ -9,8 +9,8 @@ def roll (rolls, arolls):
     d1 = 1
     d2 = 2
     while rolls < arolls and d1 != d2:
-        d1 = random.randint(1, 20)
-        d2 = random.randint(1, 20)
+        d1 = random.randint(1, 100)
+        d2 = random.randint(1, 100)
         rolls += 1
         print(f"[{rolls}] I rolled {d1} & {d2}")
     if d1 != d2 and rolls <= arolls:
@@ -28,8 +28,8 @@ adjusted_rolls = 10
 simulations = 0
 
 
-while not 4800 <= num_of_wins < 5200:
-    while play_count < 10000:
+while not 500 <= num_of_wins < 520:
+    while play_count < 1000:
         game_result = roll(0, adjusted_rolls)
         print(f"Win? {game_result}.")
         if game_result == True:
@@ -40,12 +40,12 @@ while not 4800 <= num_of_wins < 5200:
             play_count += 1
             print(f"Wins are {num_of_wins}, count is {play_count}.")
 #    else:
-    if num_of_wins < 4800:
+    if num_of_wins < 480:
         adjusted_rolls -= 1
         play_count = 0
         num_of_wins = 0
         simulations += 1
-    elif num_of_wins > 5200:
+    elif num_of_wins > 520:
         adjusted_rolls += 1
         play_count = 0
         num_of_wins = 0
@@ -54,5 +54,5 @@ while not 4800 <= num_of_wins < 5200:
         play_count = 0
         simulations +=1
 
-print(f"I've calculated {adjusted_rolls} as the perfect number for {num_of_wins} wins out of 10000 games.")
+print(f"I've calculated {adjusted_rolls} as the perfect number for {num_of_wins} wins out of 1000 games.")
 print(f"It only took me {simulations} simulations.")
